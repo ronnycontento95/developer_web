@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- popup sidebar widget -->
+<section class="popup_sidebar_sec">
+    <div class="popup_sidebar_overlay"></div>
+    <div class="widget_area">
+        <a href="javascript:void(0);" class="widget_closer"><i class="la la-times"></i></a>
+        <div class="center_align">
+            <div class="about_widget_area">
+                <div class="wd_logo">
+                    <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="Vorzex" /></a>
+                </div>
+                <p>
+                    We take a bottom-line approach to each project. Our clients consistently see increased traffic,
+                    enhanced brand loyalty and new leads thanks to our work.
+                </p>
+                <div class="icon_box_2">
+                    <i class="noun-noun_call_1624888"></i>
+                    <h4>Call Us</h4>
+                    <p>1.800.321.9876</p>
+                </div>
+                <div class="icon_box_2">
+                    <i class="noun-noun_Email_485891"></i>
+                    <h4>Write us</h4>
+                    <p>hello@vorzexagency.com</p>
+                </div>
+                <div class="icon_box_2">
+                    <i class="noun-noun_Address_1271842"></i>
+                    <h4>Address</h4>
+                    <p>70 Greenview Ave. Temple Hills,<br> MD 20748, USA</p>
+                </div>
+                <ul class="social_item">
+                    <li><a href="https://www.facebook.com/" class="fac"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/" class="twi"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://myaccount.google.com/" class="goo"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="https://dribbble.com/" class="dri"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- popup sidebar widget -->
+<section class="slider_03">
+    <div class="rev_slider_wrapper">
+        <div id="rev_slider_3" class="rev_slider3" data-version="5.4.5" style="display:none">
+            <ul>
+                {% for slider in sliders %}
+                <li data-index="{{slider.id}}" data-transition="random-premium" data-slotamount="default"
+                    data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut"
+                    data-easeout="Power3.easeInOut" data-masterspeed="1500" data-thumb="" data-rotate="0"
+                    data-saveperformance="off" data-title="" data-param1="" data-param2="" data-param3="" data-param4=""
+                    data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
+                    data-description="">
+                    <img src="{{slider.imagen_base.url}}" alt="Ocean" class="rev-slidebg">
+                    <div class="tp-caption ws_nowrap" data-frames='[{"delay":1300,"speed":500,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                         {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-x="left" data-y="center" data-hoffset="0" data-voffset="['-40', '-40', '-40', '0']"
+                        data-width="['550', '550', '550', '100%']" data-height="['200]" data-whitesapce="['normal']"
+                        data-fontsize="['60', '60', '60', '30']" data-lineheight="['60', '60', '60', '36']"
+                        data-fontweight="['700']" data-color="['#FFF']"
+                        data-textAlign="['left', 'left', 'left', 'center']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,20]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,10,0,20]">
+                        {{slider.titulo}}</div>
+                    <div class="tp-caption tp-resizeme normalWraping" data-frames='[{"delay":1600,"speed":700,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                         {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-x="left" data-y="center" data-hoffset="0" data-voffset="['94', '94', '94', '60']"
+                        data-width="['480', '480', '480', '100%']" data-height="['auto]" data-whitesapce="['normal']"
+                        data-fontsize="['20', '20', '20', '20']" data-lineheight="['30', '30', '30', '30']"
+                        data-fontweight="['400']" data-color="['#FFF']"
+                        data-textAlign="['left', 'left', 'left', 'center']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,20]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,10,0,20]">
+                        {{slider.subtitulo}}</div>
+                    <div class="tp-caption tp-resizeme normalWraping" data-frames='[{"delay":2000,"speed":900,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                         {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-x="left" data-y="center" data-hoffset="0" data-voffset="['180', '180', '180', '150']"
+                        data-width="['100%']" data-height="['auto]" data-whitesapce="['normal']" data-fontsize="16"
+                        data-lineheight="['30', '30', '30', '30']" data-fontweight="500"
+                        data-textAlign="['left', 'left', 'left', 'center']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,20]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,10,0,20]"><a
+                            href="about1.html" class="vor_btn_1">Aprende más<i class="noun-noun_Arrow_1896673"></i></a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+</section>
+<section class="what_we_do_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <h5 class="sec_sub_title text-uppercase">What we do?</h5>
+                <h2 class="sec_title">
+                    We help you communicate with great design strategy and execution
+                </h2>
+                <p class="vor_lead">
+                    We work closely with each client to develop compelling digital solutions that
+                    drive meaningful engagement and commercial success.
+                </p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 mb84">
+                        <div class="icon_box_1 text-left">
+                            <i class="noun-noun_web-design_1262220"></i>
+                            <h3><a href="service_details.html">Web Design &amp; Development</a></h3>
+                            <p>
+                                Pellentesque nibh magna pellentesque tristique elementum acdapibus non lorem.
+                            </p>
+                            <a href="service_details.html" class="learmore">Learn More<i class="noun-noun_Arrow_1896673"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 mb84">
+                        <div class="icon_box_1 text-left">
+                            <i class="noun-noun_Logo-Design_1246401"></i>
+                            <h3><a href="service_details.html">Logo Design & Branding</a></h3>
+                            <p>
+                                Donec feugiat turpis nec commodo scelerisque metu nibh fermentum leo utneque lectus. 
+                            </p>
+                            <a href="service_details.html" class="learmore">Learn More<i class="noun-noun_Arrow_1896673"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="icon_box_1 text-left">
+                            <i class="noun-noun_web-design_1118805"></i>
+                            <h3><a href="service_details.html">Mobile App Design & Development</a></h3>
+                            <p>
+                                Nulla maximus nisi vitae blandit vehicula quam enim vehicula massa rutrum ipsum sapien.
+                            </p>
+                            <a href="service_details.html" class="learmore">Learn More<i class="noun-noun_Arrow_1896673"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="icon_box_1 text-left">
+                            <i class="noun-noun_Graphic-Design_898458"></i>
+                            <h3><a href="service_details.html">Digital Illustration & Animation</a></h3>
+                            <p>
+                                Donec feugiat turpis nec commodo scelerisque metu nibh fermentum leo utneque lectus. 
+                            </p>
+                            <a href="service_details.html" class="learmore">Learn More<i class="noun-noun_Arrow_1896673"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="client_testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <h2 class="sec_title">What our customers say about us</h2>
+            </div>
+            <div class="col-lg-7 col-md-8">
+                {% for c in customers %}
+                <div class="testimonial_slider{{c.id}}">
+                    <div class="testimonial_item{{c.id}}">
+                        <p> 
+                            {{c.subtitulo}}
+                        </p>
+                        <h5 class="text-uppercase">{{c.titulo}}</h5>
+                        <span>{{c.direcion}}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

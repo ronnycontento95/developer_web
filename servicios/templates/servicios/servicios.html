@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="page_banner bg_img_3"></section>
+
+<section class="service_page_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h5 class="sec_sub_title text-uppercase">What we do</h5>
+                <h2 class="sec_title">
+                    There’s more to us than just creating<br /> beautiful designs.
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                {% for servicio in servicios %}
+                <div class="service_01">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7">
+                            <div class="s01_thumb">
+                                <img src="{{servicio.imagen.url}}" alt="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5">
+                            <div class="s01_details">
+                                <h2><a href="service_details.html">{{servicio.titulo}}</a></h2>
+                                <p>
+                                    {{servicio.contenido}}    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

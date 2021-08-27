@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="page_banner shop_bg"></section>
+
+<section class="shop_section">
+    <div class="container">
+        <div class="row">
+            {% for curso in cursos %}
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_product">
+                    <div class="product_thumb">
+                        <img src="{{curso.imagen.url}}" alt="">
+                        <div class="flash_lavel">
+                            <p class="new">New</p>
+                        </div>
+                        <div class="product_meta">
+                            <a href="{% url 'carro:agregar' curso.id %}" class="add_to_cart_button"><i class="la la-shopping-cart"></i></a>
+
+                            <a href="{{curso.imagen.url}}" data-rel="lightcase:myCollection:slideshow"
+                                class="popup_img"><i class="la la-search-plus"></i></a>
+                        </div>
+                    </div>
+                    <div class="product_details">
+                        <div class="star-rating">
+                            <i class="la la-star"></i>
+                            <i class="la la-star"></i>
+                            <i class="la la-star"></i>
+                            <i class="la la-star"></i>
+                            <i class="la la-star"></i>
+                        </div>
+                        <h3><a href="shop_details.html">{{curso.nombre}}</a></h3>
+                        <div class="product_price clearfix">
+                            <span class="price">
+                                <del><span class="woocommerce-Price-amount amount"><bdi><span
+                                                class="woocommerce-Price-currencySymbol">$</span>{{curso.precio}}</bdi></span></del>
+                                <ins><span class="woocommerce-Price-amount amount"><bdi><span
+                                                class="woocommerce-Price-currencySymbol">$</span>{{curso.precio}}</bdi></span></ins>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="vorzex_pagination text-center">
+                    <span class="current">1</span>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <span class="page-numbers dots">…</span>
+                    <a href="#">18</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

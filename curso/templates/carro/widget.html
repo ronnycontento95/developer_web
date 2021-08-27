@@ -1,0 +1,51 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Imagen</th>
+            <th scope="col">Curso</th>
+            <!-- <th scope="col">producto</th> -->
+            <th scope="col">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% if request.session.carro.items %}
+            {% for key, value in request.session.carro.items %}
+        <tr>
+            <td>
+                <img src='{{value.imagen}}' height="55rem" />
+
+
+            </td>
+            <td>
+                {{value.nombre}}
+            </td>
+            <!-- <td>
+                {{value.cantidad}}
+            </td> -->
+            <td>
+                <!-- <a href="{% url 'carro:agregar' value.curso_id %}" class="btn btn-sm btn-success">+</a> -->
+                <!-- <a href="{% url 'carro:restar' value.curso_id %}" class="btn btn-sm btn-success">-</a><br> -->
+                {{value.precio}} $
+
+            </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr colspan='3'>
+            <td class="alert alert-danger text-center">
+                No tienes actualmente un curso
+            </td>
+
+        </tr>
+        {% endif %}
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">
+                Total {{importe_total_carro}}
+            </td>
+        </tr>
+    </tfoot>
+</table>
