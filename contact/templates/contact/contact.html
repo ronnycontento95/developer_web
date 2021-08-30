@@ -2,8 +2,12 @@
 {% load static %}
 
 {% block content %}
-<section class="page_banner"></section>
-
+{% for slider in s %}
+    {% if slider.url == '/contact' %}
+      <section class="page_banner" style="background: url({{slider.imagen_base.url}}) no-repeat center center / cover ;">
+      </section>
+    {% endif %}
+{% endfor %}
 <section class="contact_section">
     <div class="container">
         <div class="row">
