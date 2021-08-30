@@ -111,7 +111,8 @@
                             <p>
                                 Pellentesque nibh magna pellentesque tristique elementum acdapibus non lorem.
                             </p>
-                            <a href="service_details.html" class="learmore">Learn More<i class="noun-noun_Arrow_1896673"></i></a>
+                            <a href="service_details.html" class="learmore">Learn More<i
+                                    class="noun-noun_Arrow_1896673"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 mb84">
@@ -119,9 +120,10 @@
                             <i class="noun-noun_Logo-Design_1246401"></i>
                             <h3><a href="service_details.html">Logo Design & Branding</a></h3>
                             <p>
-                                Donec feugiat turpis nec commodo scelerisque metu nibh fermentum leo utneque lectus. 
+                                Donec feugiat turpis nec commodo scelerisque metu nibh fermentum leo utneque lectus.
                             </p>
-                            <a href="service_details.html" class="learmore">Learn More<i class="noun-noun_Arrow_1896673"></i></a>
+                            <a href="service_details.html" class="learmore">Learn More<i
+                                    class="noun-noun_Arrow_1896673"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -131,7 +133,8 @@
                             <p>
                                 Nulla maximus nisi vitae blandit vehicula quam enim vehicula massa rutrum ipsum sapien.
                             </p>
-                            <a href="service_details.html" class="learmore">Learn More<i class="noun-noun_Arrow_1896673"></i></a>
+                            <a href="service_details.html" class="learmore">Learn More<i
+                                    class="noun-noun_Arrow_1896673"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -139,9 +142,10 @@
                             <i class="noun-noun_Graphic-Design_898458"></i>
                             <h3><a href="service_details.html">Digital Illustration & Animation</a></h3>
                             <p>
-                                Donec feugiat turpis nec commodo scelerisque metu nibh fermentum leo utneque lectus. 
+                                Donec feugiat turpis nec commodo scelerisque metu nibh fermentum leo utneque lectus.
                             </p>
-                            <a href="service_details.html" class="learmore">Learn More<i class="noun-noun_Arrow_1896673"></i></a>
+                            <a href="service_details.html" class="learmore">Learn More<i
+                                    class="noun-noun_Arrow_1896673"></i></a>
                         </div>
                     </div>
                 </div>
@@ -159,7 +163,7 @@
                 {% for c in customers %}
                 <div class="testimonial_slider{{c.id}}">
                     <div class="testimonial_item{{c.id}}">
-                        <p> 
+                        <p>
                             {{c.subtitulo}}
                         </p>
                         <h5 class="text-uppercase">{{c.titulo}}</h5>
@@ -167,6 +171,79 @@
                     </div>
                 </div>
                 {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="team_section">
+    <div class="container">
+        <div class="col-lg-12 text-center">
+            <h5 class="sec_sub_title text-uppercase">BEHIND THE SCENE</h5>
+            <h2 class="sec_title">
+                Meet the team behind Vorzex<br> Digital Agency.
+            </h2>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="singleTM">
+                    {% for t in teams %}
+                    <img src="{{t.imagen.url}}" alt="">
+                    <div class="tm_content">
+                        <h3><a href="#">{{t.nombre}}</a></h3>
+                        <p>{{t.cargo}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</br>
+<section class="start_new_project bg_black_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <h5 class="sec_sub_title white text-uppercase">Start a new project</h5>
+                <h2 class="sec_title white">
+                    Ready to make something
+                    amazing with us?
+                </h2>
+                <p class="vor_lead white">
+                    Enter your details &amp; we’ll be get in touch to discuss your project.
+                </p>
+                <div class="clearfix"></div>
+                <div class="iconboxes">
+                    <div class="icon_box_2 white">
+                        <i class="noun-noun_call_1624888"></i>
+                        <h4>Call Us</h4>
+                        <p>1.800.321.9876</p>
+                    </div>
+                    <div class="icon_box_2 white">
+                        <i class="noun-noun_Email_485891"></i>
+                        <h4>Write us</h4>
+                        <p>hello@vorzexagency.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                {% if "valido" in request.GET %}
+                <h5 class="sec_sub_title text-uppercase">Gracias por escribirnos</h5>
+                {% endif%}
+                <div class="quotationForm lightmode bg_button_2">
+                    <form method="post" action="" style="color: white;">
+                        {%csrf_token%}
+                        <div class="row">
+                            {{miFormulario}}
+
+                            <div class="col-lg-12">
+                                <button type="submit">Enviar<i class="noun-noun_Arrow_1896673"></i></button>
+                                <div class="con_message alert"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

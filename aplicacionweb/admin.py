@@ -4,8 +4,10 @@ from .models import Customer, Nosotros, Slider, Team
 # Register your models here.
 class SliderAdmin(admin.ModelAdmin):
     list_display=(
-        'imagen_base',
+        'id_slider',
         'titulo',
+        'url',
+        'imagen_base',
         'subtitulo',
     )
 
