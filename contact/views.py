@@ -1,9 +1,11 @@
 from django.shortcuts import redirect, render
 from .forms import FormularioContacto
 from django.core.mail import EmailMessage
+from aplicacionweb.models import Slider
 
 
 def contact(request):
+    s=Slider.objects.all()
     formulario_contact =FormularioContacto()
     if request.method=="POST":
         formulario_contact=FormularioContacto(data=request.POST)
@@ -20,6 +22,6 @@ def contact(request):
             except:
                 return redirect("/contact/?novalido")
 
-    return render(request, "contact/contact.html",{'miFormulario': formulario_contact})
+    return render(request, "contact/contact.html",{'miFormulario': formulario_contact, 's': s})
     
     

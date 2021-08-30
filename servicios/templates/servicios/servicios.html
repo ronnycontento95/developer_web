@@ -2,7 +2,12 @@
 {% load static %}
 
 {% block content %}
-<section class="page_banner bg_img_3"></section>
+{% for slider in s %}
+    {% if slider.url == '/servicios' %}
+      <section class="page_banner" style="background: url({{slider.imagen_base.url}}) no-repeat center center / cover ;">
+      </section>
+    {% endif %}
+{% endfor %}
 
 <section class="service_page_section">
     <div class="container">
