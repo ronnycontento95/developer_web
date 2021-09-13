@@ -12,26 +12,29 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-5">
-                <h2 class="sec_title">Get in Touch with our Team</h2>
+                <h2 class="sec_title">Ponte en contacto con nuestro equipo</h2>
                 <p class="vor_lead">
-                    Enter your details &amp; we’ll be get in touch to discuss your project.
+                    Ingrese sus datos y nos pondremos en contacto para discutir su proyecto.
                 </p>
                 <div class="clearfix"></div>
+                {%for pp in p %}
+                
                 <div class="icon_box_2">
                     <i class="noun-noun_call_1624888"></i>
-                    <h4>Call Us</h4>
-                    <p>1.800.321.9876</p>
-                </div>
+                    <h4>Llámanos</h4>
+                    <p>+593-{{pp.telefono}}</p>
+                </div>IO
                 <div class="icon_box_2">
                     <i class="noun-noun_Email_485891"></i>
-                    <h4>Write us</h4>
-                    <p>hello@vorzexagency.com</p>
+                    <h4>Escribenos</h4>
+                    <p>{{pp.email}}</p>
                 </div>
                 <div class="icon_box_2">
                     <i class="noun-noun_Address_1271842"></i>
-                    <h4>Address</h4>
-                    <p>70 Greenview Ave. Temple Hills,<br> MD 20748, USA</p>
+                    <h4>Dirección</h4>
+                    <p>{{pp.direccion}}</p>
                 </div>
+                {% endfor %}
             </div>
             <div class="col-lg-8 col-md-7">
                 {% if "valido" in request.GET %}

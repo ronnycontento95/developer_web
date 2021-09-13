@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'curso/', include('curso.urls')),
     url(r'carro/', include('carro.urls')),
     url(r'perfil/', include('perfil.urls')),
+    url(r'portafolio/', include('portafolio.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

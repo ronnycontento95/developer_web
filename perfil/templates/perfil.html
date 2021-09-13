@@ -4,143 +4,131 @@
 {% block content %}
 
 {% for slider in sliders %}
-    {% if slider.url == '/perfil' %}
-      <section class="page_banner" style="background: url({{slider.imagen_base.url}}) no-repeat center center / cover ;">
-      </section>
-    {% endif %}
+{% if slider.url == '/perfil' %}
+<section class="page_banner" style="background: url({{slider.imagen_base.url}}) no-repeat center center / cover ;">
+</section>
+{% endif %}
 {% endfor %}
 
 
-<section class="funfactSection">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 text-center">
-                <h5 class="text-uppercase sec_sub_title">Who we are?</h5>
-                <h2 class="sec_title">
-                    We help you communicate with great<br /> design strategy and execution
-                </h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="singleFacts text-center">
-                    <h2>$<span class="timer">1</span>M+</h2>
-                    <h6>Revenue Generated</h6>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="singleFacts text-center">
-                    <h2><span class="timer">2,000</span>+</h2>
-                    <h6>Project Launched</h6>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="singleFacts text-center">
-                    <h2><span class="timer">10</span>+</h2>
-                    <h6>Years of Experiences</h6>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="about_section">
     <div class="container">
+        {% for t in p %}
+
         <div class="row">
-            <div class="col-lg-6">
-                <div class="ab_img tw-stretch-element-inside-column">
-                    <img src="{% static 'images/about/1.jpg' %}" alt="Vorzex" />
+            <div class="col-lg-5">
+                <div class="">
+                    <img src="{{t.imagen.url}}" alt="ronny.png" />
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <div class="ab_contents">
-                    <h5 class="text-uppercase sec_sub_title">Who we are?</h5>
-                    <h2 class="sec_title">
-                        We work with big brands and agencies through to small businesses and startups.
+                    <h5 class="text-uppercase sec_sub_title">PERFIL</h5>
+                    <h2 class="sec_title text-uppercase">
+                        <h3>{{t.nombre}} </br>
+                            <h5>{{t.titulo}}</h5>
+                        </h3>
+
                     </h2>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12" style="margin-bottom: 20px;">
                             <div class="icon_box_5">
-                                <i class="noun-noun_integrity_1684637"></i>
-                                <h3>Our Integrity</h3>
-                                <p>
-                                    We take a bottom-line approach to each project. Our clients consistently see
-                                    increased visitor,
-                                    enhanced brand loyalty and new leads thanks to our work.
-                                </p>
+                                <!-- <i class="noun-noun_integrity_1684637"></i> -->
+                                {{t.pensamiento}}
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-bottom: 15px;">
+                            <div class="icon_box_2">
+                                <i class="noun-noun_call_1624888"></i>
+                                <h4>Telefono</h4>
+                                <p>{{t.telefono}}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="icon_box_5">
-                                <i class="noun-noun_reliability_883114"></i>
-                                <h3>Our Reliability</h3>
-                                <p>
-                                    We take a bottom-line approach to each project. Our clients consistently see
-                                    increased visitor,
-                                    enhanced brand loyalty and new leads thanks to our work.
-                                </p>
+                            <div class="icon_box_2">
+                                <i class="noun-noun_Email_485891"></i>
+                                
+                                <a target="_blank" href="{{t.github}}" class="fac"><i
+                                    class="noun-noun_Email_485891"></i>{{t.email}}</a></li>
+                                    <p></p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="our_misstion_section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="mission text-center">
-                    <h2>Our Mission</h2>
-                    <p>
-                        Our mission is to help businesses achieve solid brand recognition and increase their profits
-                        through development and online strategies.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="client_testimonial">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4">
-                <h2 class="sec_title">What our customers say about us</h2>
-            </div>
-            <div class="col-lg-7 col-md-8">
-                <div class="testimonial_slider">
-                    <div class="testimonial_item">
-                        <p>
-                            “There are design companies, and then there are user experience, design, consulting,
-                            interface design, brilliant, and professional. By far one of the worlds best
-                            known brands.”
-                        </p>
-                        <h5 class="text-uppercase">Jack Lawson</h5>
-                        <span>Newyork - USA</span>
-                    </div>
-                    <div class="testimonial_item">
-                        <p>
-                            “There are design companies, and then there are user experience, design, consulting,
-                            interface design, brilliant, and professional. By far one of the worlds best
-                            known brands.”
-                        </p>
-                        <h5 class="text-uppercase">Jack Lawson</h5>
-                        <span>Newyork - USA</span>
-                    </div>
-                    <div class="testimonial_item">
-                        <p>
-                            “There are design companies, and then there are user experience, design, consulting,
-                            interface design, brilliant, and professional. By far one of the worlds best
-                            known brands.”
-                        </p>
-                        <h5 class="text-uppercase">Jack Lawson</h5>
-                        <span>Newyork - USA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                        <div class="col-md-6"style="margin-bottom: 15px;" >
+                            <div class="icon_box_2">
+                                <i class="fa fa-home"></i>
+                                <h4>Dirección:</h4>
+                                <p>{{t.direccion}}</p>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="icon_box_2">
+                                <a target="_blank" href="{{t.likein}}" class="fac"><i
+                                    class="fa fa-linkedin-square"></i>Likein:</a></li>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-bottom: 15px;">
+                            <div class="icon_box_2">
+                                <i class="fa fa-birthday-cake"></i>
+                                <h4>Cumpleaños:</h4>
+                                <p>{{t.cumpleanos}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="icon_box_2">
+                                <a target="_blank" href="{{t.github}}" class="fac"><i
+                                    class="fa fa-facebook"></i>Facebook</a></li>
+                                    
+                            </div>  
 
+
+                        </div>
+                        <div class="col-md-6" style="margin-bottom: 25px;">
+                            
+                        </div>
+                        <div class="col-md-6" style="margin-bottom: 35px;">
+                            <div class="icon_box_2">
+                                <a target="_blank" href="{{t.github}}" class="fac"><i
+                                    class="fa fa-github"></i>Github</a></li>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="vor_btn_lg text-uppercase" href="{{t.curriculo.url}}" >curriculo </a>
+
+                        </div>
+                        <div class="col-md-6">
+                            <a class="vor_btn_lg text-uppercase" href="mailto:ronnyfer95@gmail.com" >Contratame ahora </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="why_choose_us_sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <!-- <h5 class="sec_sub_title text-uppercase">Why choose us</h5> -->
+                <h2 class="sec_title">PASATIEMPOS E INTERESES</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for p in h %}
+            <div class="col-lg-5 col-md-6">
+                <div class="text_box">
+                    <div class="icon_box_2 white">
+                        <img src="{{p.imagen_icono.url}}" height="100px"/>
+                        <h3>{{p.nombre}}</h3>
+                        <!-- <p>{{t.github}}</p> -->
+                    </div>                    
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+</section>
 
 {% endblock %}

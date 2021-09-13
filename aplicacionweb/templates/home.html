@@ -4,50 +4,15 @@
 {% block content %}
 
 <!-- popup sidebar widget -->
-<section class="popup_sidebar_sec">
-    <div class="popup_sidebar_overlay"></div>
-    <div class="widget_area">
-        <a href="javascript:void(0);" class="widget_closer"><i class="la la-times"></i></a>
-        <div class="center_align">
-            <div class="about_widget_area">
-                <div class="wd_logo">
-                    <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="Vorzex" /></a>
-                </div>
-                <p>
-                    We take a bottom-line approach to each project. Our clients consistently see increased traffic,
-                    enhanced brand loyalty and new leads thanks to our work.
-                </p>
-                <div class="icon_box_2">
-                    <i class="noun-noun_call_1624888"></i>
-                    <h4>Call Us</h4>
-                    <p>1.800.321.9876</p>
-                </div>
-                <div class="icon_box_2">
-                    <i class="noun-noun_Email_485891"></i>
-                    <h4>Write us</h4>
-                    <p>hello@vorzexagency.com</p>
-                </div>
-                <div class="icon_box_2">
-                    <i class="noun-noun_Address_1271842"></i>
-                    <h4>Address</h4>
-                    <p>70 Greenview Ave. Temple Hills,<br> MD 20748, USA</p>
-                </div>
-                <ul class="social_item">
-                    <li><a href="https://www.facebook.com/" class="fac"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://twitter.com/" class="twi"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://myaccount.google.com/" class="goo"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="https://dribbble.com/" class="dri"><i class="fa fa-dribbble"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+
 <!-- popup sidebar widget -->
 <section class="slider_03">
     <div class="rev_slider_wrapper">
         <div id="rev_slider_3" class="rev_slider3" data-version="5.4.5" style="display:none">
             <ul>
                 {% for slider in sliders %}
+                {% if slider.url == '/' %}
+                
                 <li data-index="{{slider.id}}" data-transition="random-premium" data-slotamount="default"
                     data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut"
                     data-easeout="Power3.easeInOut" data-masterspeed="1500" data-thumb="" data-rotate="0"
@@ -83,6 +48,7 @@
                             href="about1.html" class="vor_btn_1">Aprende más<i class="noun-noun_Arrow_1896673"></i></a>
                     </div>
                 </li>
+                {% endif %}
                 {% endfor %}
             </ul>
         </div>
@@ -93,13 +59,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-12">
-                <h5 class="sec_sub_title text-uppercase">What we do?</h5>
+                <h5 class="sec_sub_title text-uppercase">QUE HACEMOS?</h5>
                 <h2 class="sec_title">
-                    We help you communicate with great design strategy and execution
+                    Te ayudamos a comunicarte con una gran estrategia y ejecución de diseño.
                 </h2>
                 <p class="vor_lead">
-                    We work closely with each client to develop compelling digital solutions that
-                    drive meaningful engagement and commercial success.
+                    Trabajamos en estrecha colaboración con cada cliente para desarrollar soluciones digitales
+                    convincentes que impulsen un compromiso significativo y el éxito comercial.
                 </p>
             </div>
             <div class="col-lg-8 col-md-12">
@@ -107,44 +73,36 @@
                     <div class="col-lg-6 col-md-6 mb84">
                         <div class="icon_box_1 text-left">
                             <i class="noun-noun_web-design_1262220"></i>
-                            <h3><a href="service_details.html">Web Design &amp; Development</a></h3>
-                            <p>
-                                Pellentesque nibh magna pellentesque tristique elementum acdapibus non lorem.
-                            </p>
-                            <a href="service_details.html" class="learmore">Learn More<i
+                            <h3><a href="{% url 'Contact' %}">Diseño y desarrollo web</a></h3>
+                            
+                            <a href="{% url 'Contact' %}" class="learmore">Aprende más<i
                                     class="noun-noun_Arrow_1896673"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 mb84">
                         <div class="icon_box_1 text-left">
                             <i class="noun-noun_Logo-Design_1246401"></i>
-                            <h3><a href="service_details.html">Logo Design & Branding</a></h3>
-                            <p>
-                                Donec feugiat turpis nec commodo scelerisque metu nibh fermentum leo utneque lectus.
-                            </p>
-                            <a href="service_details.html" class="learmore">Learn More<i
+                            <h3><a href="{% url 'Contact' %}">Diseño de logotipos y marca</a></h3>
+                            
+                            <a href="{% url 'Contact' %}" class="learmore">Aprende más<i
                                     class="noun-noun_Arrow_1896673"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="icon_box_1 text-left">
                             <i class="noun-noun_web-design_1118805"></i>
-                            <h3><a href="service_details.html">Mobile App Design & Development</a></h3>
-                            <p>
-                                Nulla maximus nisi vitae blandit vehicula quam enim vehicula massa rutrum ipsum sapien.
-                            </p>
-                            <a href="service_details.html" class="learmore">Learn More<i
+                            <h3><a href="{% url 'Contact' %}">Diseño y desarrollo de aplicaciones móviles</a></h3>
+                            
+                            <a href="{% url 'Contact' %}" class="learmore">Aprende más<i
                                     class="noun-noun_Arrow_1896673"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="icon_box_1 text-left">
                             <i class="noun-noun_Graphic-Design_898458"></i>
-                            <h3><a href="service_details.html">Digital Illustration & Animation</a></h3>
-                            <p>
-                                Donec feugiat turpis nec commodo scelerisque metu nibh fermentum leo utneque lectus.
-                            </p>
-                            <a href="service_details.html" class="learmore">Learn More<i
+                            <h3><a href="{% url 'Contact' %}">Ilustración y animación digital</a></h3>
+                            
+                            <a href="{% url 'Contact' %}" class="learmore">Learn More<i
                                     class="noun-noun_Arrow_1896673"></i></a>
                         </div>
                     </div>
@@ -157,7 +115,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4">
-                <h2 class="sec_title">What our customers say about us</h2>
+                <h2 class="sec_title">Que dicen los clientes sobre nosotros</h2>
             </div>
             <div class="col-lg-7 col-md-8">
                 {% for c in customers %}
@@ -178,9 +136,10 @@
 <section class="team_section">
     <div class="container">
         <div class="col-lg-12 text-center">
-            <h5 class="sec_sub_title text-uppercase">BEHIND THE SCENE</h5>
+        </br>
+            <h5 class="sec_sub_title text-uppercase">DETRÁS DE LA ESCENA</h5>
             <h2 class="sec_title">
-                Meet the team behind Vorzex<br> Digital Agency.
+                Conozca al equipo detrás de Developer.
             </h2>
         </div>
     </div>
@@ -205,27 +164,28 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6">
-                <h5 class="sec_sub_title white text-uppercase">Start a new project</h5>
+                <h5 class="sec_sub_title white text-uppercase">INICIAR UN NUEVO PROYECTO</h5>
                 <h2 class="sec_title white">
-                    Ready to make something
-                    amazing with us?
+                    ¿Listo para hacer algo increíble con nosotros?
                 </h2>
                 <p class="vor_lead white">
-                    Enter your details &amp; we’ll be get in touch to discuss your project.
+                    Ingrese sus datos y nos pondremos en contacto para discutir su proyecto.
                 </p>
                 <div class="clearfix"></div>
+                {% for pt in p %}
                 <div class="iconboxes">
                     <div class="icon_box_2 white">
                         <i class="noun-noun_call_1624888"></i>
-                        <h4>Call Us</h4>
-                        <p>1.800.321.9876</p>
+                        <h4>Llámanos</h4>
+                        <p>{{pt.telefono}}</p>
                     </div>
                     <div class="icon_box_2 white">
                         <i class="noun-noun_Email_485891"></i>
-                        <h4>Write us</h4>
-                        <p>hello@vorzexagency.com</p>
+                        <h4>Escribenos</h4>
+                        <p>{{pt.email}}</p>
                     </div>
                 </div>
+                {% endfor %}
             </div>
             <div class="col-lg-6 col-md-6">
                 {% if "valido" in request.GET %}

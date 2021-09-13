@@ -2,12 +2,14 @@ from contact.forms import FormularioContacto
 from aplicacionweb.models import Customer, Slider, Team
 from django.shortcuts import redirect, render, HttpResponse
 from django.core.mail import EmailMessage
+from perfil.models import Perfil
 # Create your views here.
 
 def home(request):
     sliders=Slider.objects.all()
     customers=Customer.objects.all()
     teams=Team.objects.all().order_by('pk')
+    p=Perfil.objects.all()
 
 
     formulario_contact =FormularioContacto()
@@ -25,5 +27,5 @@ def home(request):
                 return redirect("/contact/?valido")
             except:
                 return redirect("/contact/?novalido")
-    ctx={'sliders': sliders, 'customers': customers, 'teams': teams, 'miFormulario': formulario_contact}
+    ctx={'sliders': sliders, 'customers': customers, 'teams': teams, 'miFormulario': formulario_contact, 'p': p}
     return render(request, "home.html", ctx)

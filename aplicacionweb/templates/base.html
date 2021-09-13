@@ -4,7 +4,7 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <title>Developer Ronny</title>
+    <title></title>
     <meta name="viewport" content="width=device-width">
 
     <!-- Include All CSS here-->
@@ -16,10 +16,8 @@
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/line-awesome.css' %}" />
     <link rel="stylesheet" href="{% static 'css/nounicon.css' %}" />
-
     <!-- Revolution Slider Setting CSS -->
-    <link rel="stylesheet" href="{% static 'css/settings.css' %}" /> 
-
+    <link rel="stylesheet" href="{% static 'css/settings.css' %}" />
     <link rel="stylesheet" href="{% static 'css/preset.css' %}" />
     <link rel="stylesheet" href="{% static 'css/theme.css' %}" />
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
@@ -34,7 +32,7 @@
     <!-- Preloader Start -->
     <div class="preloader">
         <div class="preloader-inner">
-            <div class="loader-logo"><img src="http://themewar.com/documentations/vorzex_html/images/2.png"
+            <div class="loader-logo"><img src="{% static 'images/logo.png' %}"
                     alt="Vorzex"></div>
             <div class="preloader-box">
                 <div class="letter">L</div>
@@ -54,7 +52,7 @@
             <div class="row">
                 <div class="col-lg-2 col-md-3">
                     <div class="logo">
-                        <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="Vorzex" /></a>
+                        <a href="#"><img src="{% static 'images/logo.png' %}" alt="Vorzex" /></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 menu-col">
@@ -64,20 +62,22 @@
                             <li><a href="{% url 'Home' %}" style="color: white;">INICIO</a></li>
                             <li><a href="{% url 'Perfil' %}" style="color: white;">PERFIL</a></li>
                             <li><a href="{% url 'Servicios' %}" style="color: white;">SERVICIOS</a></li>
+                            <li><a href="{% url 'Portafolio' %}" style="color: white;">PORTAFOLIO</a></li>
                             <li><a href="{% url 'Blog' %}" style="color: white;">Blog</a></li>
                             <li><a href="{% url 'Contact' %}" style="color: white;">Contacto</a></li>
-                            <li><a href="{% url 'Curso' %}" style="color: white;">Cursos</a></li>
+                            <!-- <li><a href="{% url 'Curso' %}" style="color: white;">Cursos</a></li> -->
                         </ul>
                     </nav>
-                    
+
                 </div>
                 <div class="col-lg-2 col-md-1">
-                        <div class="navigator_right text-right">
-                            <a href="#" class="naviUser"><i class="noun-noun_account_847124"></i></a>
-                            <a href="{% url 'CursosTotal' %}" class="naviCart"><span>0</span><i class="noun-noun_cart_1231977"></i></a>
-                            <a href="javascript:void(0)" class="navigator"><span></span><span></span><span></span></a>
-                        </div>
+                    <div class="navigator_right text-right">
+                        <!-- <a href="#" class="naviUser"><i class="noun-noun_account_847124"></i></a>
+                        <a href="{% url 'CursosTotal' %}" class="naviCart"><span>0</span><i
+                                class="noun-noun_cart_1231977"></i></a> -->
+                        <a href="javascript:void(0)" class="navigator"><span></span><span></span><span></span></a>
                     </div>
+                </div>
             </div>
         </div>
     </header>
@@ -88,34 +88,43 @@
             <div class="center_align">
                 <div class="about_widget_area">
                     <div class="wd_logo">
-                        <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="Vorzex" /></a>
+                        <a href="#"><img src="{% static 'images/logo3.png' %}" alt="Vorzex" /></a>
                     </div>
                     <p>
-                        We take a bottom-line approach to each project. Our clients consistently see increased traffic,
-                        enhanced brand loyalty and new leads thanks to our work.
+                        Adoptamos un enfoque de resultado final para cada proyecto. Nuestros clientes ven constantemente
+                        un mayor tráfico, una mayor lealtad a la marca y nuevos clientes potenciales gracias a nuestro
+                        trabajo.
+
                     </p>
+                    {%for r in p %}
+
                     <div class="icon_box_2">
                         <i class="noun-noun_call_1624888"></i>
-                        <h4>Call Us</h4>
-                        <p>1.800.321.9876</p>
+                        <h4>Llámanos</h4>
+                        <p>+593-{{r.telefono}}</p>
                     </div>
                     <div class="icon_box_2">
                         <i class="noun-noun_Email_485891"></i>
-                        <h4>Write us</h4>
-                        <p>hello@vorzexagency.com</p>
+                        <h4>Escribenos</h4>
+                        <p>{{r.email}}</p>
                     </div>
                     <div class="icon_box_2">
                         <i class="noun-noun_Address_1271842"></i>
-                        <h4>Address</h4>
-                        <p>70 Greenview Ave. Temple Hills,<br> MD 20748, USA</p>
+                        <h4>Dirección</h4>
+                        <p>{{r.direccion}}</p>
                     </div>
                     <ul class="social_item">
-                        <li><a href="https://www.facebook.com/" class="fac"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/" class="twi"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="https://myaccount.google.com/" class="goo"><i class="fa fa-google-plus"></i></a>
-                        </li>
-                        <li><a href="https://dribbble.com/" class="dri"><i class="fa fa-dribbble"></i></a></li>
+                        <ul>
+                            <li><a target="_blank" href="{{pp.facebook}}" class="fac"><i
+                                        class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="{{pp.likein}}" class="twi"><i
+                                        class="fa fa-linkedin-square"></i></a></li>
+                            <li><a target="_blank" href="{{pp.github}}" class="dri"><i
+                                        class="fa fa-github"></i></a>
+                            </li>
+                        </ul>
                     </ul>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -130,64 +139,57 @@
             <div class="row">
                 <div class="col-lg-2 col-md-12">
                     <div class="footer_logo">
-                        <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="" /></a>
+                        <a href="#"><img src="{% static 'images/logo3.png' %}" alt="" /></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-5 col-md-7">
                     <div class="widget nav-menus">
                         <h2 class="widget_title">Company</h2>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="portfolio1.html">Our Work</a></li>
-                            <li><a href="about1.html">About Us</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="contact.html">Get in Touch</a></li>
-                            <li><a href="service.html">Services</a></li>
+                            <li><a href="{% url 'Home' %}">Inicio</a></li>
+                            <li><a href="{% url 'Perfil' %}">Perfil</a></li>
+                            <li><a href="{% url 'Servicios' %}">Servicios</a></li>
+                            <li><a href="{% url 'Blog' %}">Blog</a></li>
+                            <li><a href="{% url 'Contact' %}">Contacto</a></li>
+                            <li><a href="{% url 'Curso' %}">Cursos</a></li>
+
                         </ul>
                     </div>
                 </div>
                 <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="widget">
-                        <h2 class="widget_title">Services</h2>
-                        <ul>
-                            <li><a href="service_details.html">Web Design & Development</a></li>
-                            <li><a href="service_details.html">Mobile App Design</a></li>
-                            <li><a href="service_details.html">Logo Design & Branding</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 noPaddingLeft">
+
+                {% for pp in p %}
+                <div class="col-lg-3 col-md-7 noPaddingLeft">
                     <div class="widget socialicons">
-                        <h2 class="widget_title">Get Social</h2>
+
+                        <h2 class="widget_title">Socializa</h2>
                         <ul>
-                            <li><a href="https://www.facebook.com/" class="fac"><i
+                            <li><a target="_blank" href="{{pp.facebook}}" class="fac"><i
                                         class="fa fa-facebook"></i>Facebook</a></li>
-                            <li><a href="https://twitter.com/" class="twi"><i class="fa fa-twitter"></i>Twitter</a></li>
-                            <li><a href="https://myaccount.google.com/" class="goo"><i
-                                        class="fa fa-google-plus"></i>Google+</a></li>
-                            <li><a href="https://dribbble.com/" class="dri"><i class="fa fa-dribbble"></i>Dribble</a>
+                            <li><a target="_blank" href="{{pp.likein}}" class="twi"><i
+                                        class="fa fa-linkedin-square"></i>Twitter</a></li>
+                            <li><a target="_blank" href="{{pp.github}}" class="dri"><i
+                                        class="fa fa-github"></i>Github</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 noPaddingLeft">
                     <div class="widget">
-                        <h2 class="widget_title">Visit Us</h2>
+                        <h2 class="widget_title">Visítanos</h2>
                         <div class="contactContents">
-                            <h4>Head Office</h4>
+                            <h4>Oficina central</h4>
                             <p>
-                                70 Greenview Ave. <br />
-                                Temple Hills, MD 20748
+                                {{pp.direccion}}
                             </p>
                             <p>
-                                1.800.321.9876
-                                <a href="mailto:hello@vorzexagency.com">hello@vorzexagency.com</a>
+                                +593-{{pp.telefono}}
+                                <a href="mailto:ronnyfer95@gmail.com">{{pp.email}}</a>
                             </p>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </footer>
@@ -196,10 +198,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p>&copy; 2021 Vorzex Agency Theme. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-6 text-right">
-                    <p>Design by <a href="http://themewar.com/">Themewar.com</a></p>
+                    <p>&copy; 2021 Developer Theme. Reservados todos los derechos.</p>
                 </div>
             </div>
         </div>

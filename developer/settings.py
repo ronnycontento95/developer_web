@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +48,7 @@ INSTALLED_APPS = [
     'curso',
     'carro',
     'perfil',
+    'portafolio',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +150,9 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'ronnyfer95@gmail.com'
 EMAIL_HOST_PASSWORD = 'ronny2020*'
+
+cloudinary.config( 
+  cloud_name = "developments", 
+  api_key = "957232151158746", 
+  api_secret = "__AXof5hT0e07TPPUWiVB5_JCRg",
+)

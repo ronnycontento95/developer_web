@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.base import Model
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class categoriaCurso(models.Model):
@@ -17,7 +18,7 @@ class categoriaCurso(models.Model):
 class Curso(models.Model):
     nombre=models.CharField(max_length=50)
     categorias=models.ForeignKey(categoriaCurso, on_delete=models.CASCADE)
-    imagen=models.ImageField(upload_to='curso', null=True, blank=True)
+    imagen=CloudinaryField('imagen')
     precio=models.FloatField()
     disponivilidad=models.BooleanField(default=True)
     created=models.DateField(auto_now_add=True)

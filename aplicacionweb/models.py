@@ -1,12 +1,12 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
 class Slider(models.Model):
     id_slider = models.AutoField(primary_key=True)
     titulo=models.CharField(max_length=50)
-    imagen_base=models.ImageField(upload_to='slider')
+    imagen_base=CloudinaryField('imagen')
     subtitulo=models.CharField(max_length=50)
     url=models.CharField(max_length=50, null=True)
     
